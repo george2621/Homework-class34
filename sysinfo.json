@@ -1,0 +1,54 @@
+{
+  "node": "v14.18.0",
+  "system": {
+    "manufacturer": "Apple Inc.",
+    "model": "MacBookAir6,2"
+  },
+  "cpu": {
+    "manufacturer": "Intel®",
+    "brand": "Core™ i5-4250U",
+    "speed": 1.3
+  },
+  "memory": "4 GB",
+  "osInfo": {
+    "platform": "darwin",
+    "distro": "macOS",
+    "release": "11.6"
+  },
+  "vscodeInfo": {
+    "version": "1.60.0",
+    "extensions": [
+      "aaron-bond.better-comments",
+      "ajhyndman.jslint",
+      "bierner.github-markdown-preview",
+      "bierner.markdown-checkbox",
+      "bierner.markdown-emoji",
+      "bierner.markdown-preview-github-styles",
+      "bierner.markdown-yaml-preamble",
+      "CoenraadS.bracket-pair-colorizer-2",
+      "DavidAnson.vscode-markdownlint",
+      "dbaeumer.vscode-eslint",
+      "eamodio.gitlens",
+      "esbenp.prettier-vscode",
+      "johnpapa.winteriscoming",
+      "ms-toolsai.jupyter",
+      "ms-toolsai.jupyter-keymap",
+      "ritwickdey.LiveServer",
+      "RobbOwen.synthwave-vscode",
+      "sdras.night-owl",
+      "streetsidesoftware.code-spell-checker",
+      "xabikos.JavaScriptSnippets",
+      "zhuangtongfa.material-theme"
+    ],
+    "userSettings": {
+      "workbench.colorTheme": "SynthWave '84",
+      "synthwave84.disableGlow": true,
+      "explorer.confirmDragAndDrop": false,
+      "liveServer.settings.donotVerifyTags": true,
+      "liveServer.settings.donotShowInfoMsg": true,
+      "security.workspace.trust.untrustedFiles": "open",
+      "editor.formatOnSave": true,
+      "prettier.trailingComma": "all"
+    }
+  }
+}
