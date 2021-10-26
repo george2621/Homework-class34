@@ -55,8 +55,8 @@ const cartForParty = {
 function calculateTotalPrice(cartForParty) {
   // TODO replace this comment with your code
   let totalAmount = 0;
-  for (const x in cartForParty) {
-    totalAmount += cartForParty[x];
+  for (const cart in cartForParty) {
+    totalAmount += cartForParty[cart];
   }
   return totalAmount;
 }

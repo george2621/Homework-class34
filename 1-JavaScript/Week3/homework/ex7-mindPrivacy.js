@@ -29,16 +29,15 @@ const employeeRecords = [
   },
 ];
 
+
 // ! Function under test
 function filterPrivateData(records) {
-  // TODO complete this function
-  let nonPrivateRecords = records;
-  for (let i = 0; i < nonPrivateRecords.length; i++) {
-    delete nonPrivateRecords[i].gender;
-    delete nonPrivateRecords[i].salary;
-  }
-
-  return nonPrivateRecords;
+ 
+  return records.map(record => {return {
+    name : record.name,
+    occupation : record.occupation,
+    email : record.email
+  }})
 }
 
 // ! Test functions (plain vanilla JavaScript)
@@ -73,4 +72,4 @@ function test() {
 test();
 
 
-// console.log(filterPrivateData(employeeRecords));
+console.log(filterPrivateData(employeeRecords));

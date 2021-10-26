@@ -22,7 +22,7 @@ function giveCompliment(name) {
 
   const compliments = ['great', 'awesome', 'clever', 'generous', 'wonderful', 'creative', 'diligent', 'lazy', 'shy', 'genius'];
   // TODO complete this function
-  return `You are ${compliments[Math.floor(Math.random() * 10)]}, ${name}!`;
+  return `You are ${compliments[Math.floor(Math.random() * compliments.length)]}, ${name}!`;
 
 }
 

@@ -30,13 +30,8 @@ function addToShoppingCart(item) {
     if (shoppingCart.length > 3) {
       shoppingCart.shift();
     }
-    return `You bought ${shoppingCart[0]}, ${shoppingCart[1]}, ${shoppingCart[2]}!`;
-  } else {
-    return `You bought ${shoppingCart[0]}, ${shoppingCart[1]}!`
-  }
-
-
-
+  } 
+  return `You bought ${shoppingCart.join(', ')}!`
 }
 
 // ! Test functions (plain vanilla JavaScript)
@@ -85,4 +80,7 @@ function test() {
   test5();
 }
 
+
 test();
+
+
