@@ -11,3 +11,17 @@ Full description at: https://github.com/HackYourFuture/Homework/tree/main/2-Brow
 ------------------------------------------------------------------------------*/
 
 // TODO add your JavaScript code here.
+document.body.style.fontFamily = 'Arial, sans-serif';
+
+let nickName = document.getElementById('nickname');
+nickName.textContent = 'Roumieh';
+let favFood = document.getElementById('fav-food');
+favFood.textContent = 'BBQ';
+let homeTown = document.getElementById('hometown');
+homeTown.textContent = 'Homs';
+
+let unorderList = document.querySelector('ul');
+
+for (let item of unorderList.children) {
+  item.classList.add('list-item');
+}

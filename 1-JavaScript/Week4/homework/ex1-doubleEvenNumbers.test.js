@@ -11,7 +11,8 @@ Let's rewrite it (or _refactor_ it, as experienced developers would call it):
 ------------------------------------------------------------------------------*/
 // ! Function to be tested
 const doubleEvenNumbers = (numbers) => {
-  return numbers.filter((num) => num % 2 === 0).map((num) => num * 2);
+  const doubleEvenNum =  numbers.filter((num) => num % 2 === 0).map((num) => num * 2);
+  return doubleEvenNum;
 };
 
 // ! Unit test (using Jest)

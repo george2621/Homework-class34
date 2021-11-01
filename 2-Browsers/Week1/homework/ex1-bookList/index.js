@@ -38,10 +38,40 @@ const myBooks = [
   },
 ];
 
+const coverImg = [
+  'the_design_of_everyday_things.jpg',
+  'the_most_human_human.jpg',
+  'the_pragmatic_programmer.jpg',
+];
+
+let unOrderList = document.createElement('ul');
+unOrderList.classList.add('unorder-list');
+
 function createBookList(books) {
   // TODO your code goes in here, return the ul element
+  for (let i = 0; i < books.length; i++) {
+    let itemList = document.createElement('li');
+    itemList.classList.add('item-list');
+    let paragraph = document.createElement('p');
+    let bookImg = document.createElement('img');
+
+    if (books[i].alreadyRead === true) {
+      itemList.style.background = 'green';
+    } else {
+      itemList.style.background = 'red';
+    }
+
+    paragraph.textContent = `${books[i].title}  ${books[i].author}`;
+    bookImg.src = `./assets/${coverImg[i]}`;
+
+    itemList.appendChild(paragraph);
+    itemList.appendChild(bookImg);
+    unOrderList.appendChild(itemList);
+  }
+
+  return unOrderList;
 }
 
-const ulElement = createBookList(myBooks);
+let ulElement = createBookList(myBooks);
 
 document.querySelector('#bookList').appendChild(ulElement);

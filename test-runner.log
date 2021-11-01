@@ -459,3 +459,18 @@ ex4-observable/ex4-observable.js
 2021-10-24 04:08:50 info: --------------------------------------
 2021-10-24 04:08:53 info: All unit tests passed.
 2021-10-24 04:08:56 info: All steps were completed successfully
+2021-10-26 01:10:16 info: ------------------------------------------------------
+2021-10-26 01:10:16 info: >>> Running Unit Test `ex1-doubleEvenNumbers.test` <<<
+2021-10-26 01:10:16 info: ------------------------------------------------------
+2021-10-26 01:10:20 info: All unit tests passed.
+2021-10-26 01:10:24 info: All steps were completed successfully
+2021-10-26 01:11:01 info: ------------------------------------------------------
+2021-10-26 01:11:01 info: >>> Running Unit Test `ex1-doubleEvenNumbers.test` <<<
+2021-10-26 01:11:01 info: ------------------------------------------------------
+2021-10-26 01:11:05 info: All unit tests passed.
+2021-10-26 01:11:09 info: All steps were completed successfully
+2021-10-26 01:12:55 info: ------------------------------------------
+2021-10-26 01:12:55 info: >>> Running Unit Test `ex4-observable` <<<
+2021-10-26 01:12:55 info: ------------------------------------------
+2021-10-26 01:13:00 info: All unit tests passed.
+2021-10-26 01:13:03 info: All steps were completed successfully
