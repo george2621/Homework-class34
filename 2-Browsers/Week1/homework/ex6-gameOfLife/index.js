@@ -19,7 +19,6 @@ function createCell(x, y) {
   } else {
     lifeTime = 0;
   }
-  // console.log(lifeTime);
   return {
     x,
     y,

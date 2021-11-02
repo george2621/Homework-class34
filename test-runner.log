@@ -474,3 +474,861 @@ ex4-observable/ex4-observable.js
 2021-10-26 01:12:55 info: ------------------------------------------
 2021-10-26 01:13:00 info: All unit tests passed.
 2021-10-26 01:13:03 info: All steps were completed successfully
+2021-11-02 03:38:56 info: ----------------------------------------
+2021-11-02 03:38:56 info: >>> Running Unit Test `ex1-bookList` <<<
+2021-11-02 03:38:56 info: ----------------------------------------
+2021-11-02 03:39:05 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-bookList.test.js --colors
+ FAIL  2-Browsers/Week1/unit-tests/ex1-bookList.test.js
+  Generated HTML
+    ✕ HTML should be syntactically valid (130 ms)
+    ✓ should contain a <ul> that is a child of <div id="bookList"> (4 ms)
+    ✓ should contain a <ul> with 3 <li> elements (2 ms)
+    ✓ should contain an <li> with title and author for each book of the `myBooks` array (2 ms)
+    ✓ should contain an <img> element for each book (1 ms)
+
+  ● Generated HTML › HTML should be syntactically valid
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: ""
+    Received: "
+    inline
+      25:145  error  <img> is missing required \"alt\" attribute  wcag/h37
+      25:297  error  <img> is missing required \"alt\" attribute  wcag/h37
+      25:440  error  <img> is missing required \"alt\" attribute  wcag/h37·
+    ✖ 3 problems (3 errors, 0 warnings)·
+    More information:
+      https://html-validate.org/rules/wcag/h37.html·
+    "
+
+      44 |   const report = htmlValidate.validateString(htmlText);
+      45 |   const validationReport = stylish(report);
+    > 46 |   expect(validationReport).toBe('');
+         |                            ^
+      47 | }
+      48 |
+      49 | module.exports = {
+
+      at validateHTML (test-runner/jsdom-helpers.js:46:28)
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex1-bookList.test.js:39:5)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 4 passed, 5 total
+Snapshots:   0 total
+Time:        6.514 s
+Ran all test suites matching /ex1-bookList.test.js/i.
+
+2021-11-02 03:39:07 error: *** ESLint Report ***
+
+ex1-bookList/index.js
+  47:5  warning  'unOrderList' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+  53:9  warning  'itemList' is never reassigned. Use 'const' instead     no-autofix/prefer-const
+  55:9  warning  'paragraph' is never reassigned. Use 'const' instead    no-autofix/prefer-const
+  56:9  warning  'bookImg' is never reassigned. Use 'const' instead      no-autofix/prefer-const
+  75:5  warning  'ulElement' is never reassigned. Use 'const' instead    no-autofix/prefer-const
+
+✖ 5 problems (0 errors, 5 warnings)
+
+
+2021-11-02 03:39:09 error: *** Spell Checker Report ***
+
+ex1-bookList/index.js:48:28 - Unknown word (unorder)
+
+2021-11-02 03:39:58 info: ---------------------------------------
+2021-11-02 03:39:58 info: >>> Running Unit Test `ex2-aboutMe` <<<
+2021-11-02 03:39:58 info: ---------------------------------------
+2021-11-02 03:40:06 info: All unit tests passed.
+2021-11-02 03:40:07 error: *** ESLint Report ***
+
+ex2-aboutMe/index.js
+  16:5   warning  'nickName' is never reassigned. Use 'const' instead     no-autofix/prefer-const
+  18:5   warning  'favFood' is never reassigned. Use 'const' instead      no-autofix/prefer-const
+  20:5   warning  'homeTown' is never reassigned. Use 'const' instead     no-autofix/prefer-const
+  23:5   warning  'unorderList' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+  25:10  warning  'item' is never reassigned. Use 'const' instead         no-autofix/prefer-const
+
+✖ 5 problems (0 errors, 5 warnings)
+
+
+2021-11-02 03:40:09 error: *** Spell Checker Report ***
+
+ex2-aboutMe/index.js:17:25 - Unknown word (Roumieh)
+ex2-aboutMe/index.js:23:5 - Unknown word (unorder)
+ex2-aboutMe/index.js:25:18 - Unknown word (unorder)
+
+2021-11-02 03:41:23 info: ---------------------------------------
+2021-11-02 03:41:23 info: >>> Running Unit Test `ex2-aboutMe` <<<
+2021-11-02 03:41:23 info: ---------------------------------------
+2021-11-02 03:41:32 info: All unit tests passed.
+2021-11-02 03:41:35 error: *** Spell Checker Report ***
+
+ex2-aboutMe/index.js:17:25 - Unknown word (Roumieh)
+ex2-aboutMe/index.js:23:7 - Unknown word (unorder)
+ex2-aboutMe/index.js:25:20 - Unknown word (unorder)
+
+2021-11-02 03:42:15 info: ------------------------------------------
+2021-11-02 03:42:15 info: >>> Running Unit Test `ex3-hijackLogo` <<<
+2021-11-02 03:42:15 info: ------------------------------------------
+2021-11-02 03:42:22 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex3-hijackLogo.test.js --colors
+ FAIL  2-Browsers/Week1/unit-tests/ex3-hijackLogo.test.js
+  hijackLogo
+    ✕ should have all TODO comments removed (98 ms)
+    ✓ should set the `src` property
+    ✓ should set the `srcset` property (1 ms)
+
+  ● hijackLogo › should have all TODO comments removed
+
+    expect(received).toBeFalsy()
+
+    Received: true
+
+      113 |
+      114 | function checkTodos(source) {
+    > 115 |   expect(source.includes('TODO')).toBeFalsy();
+          |                                   ^
+      116 | }
+      117 |
+      118 | module.exports = {
+
+      at checkTodos (test-runner/unit-test-helpers.js:115:35)
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex3-hijackLogo.test.js:28:55)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 2 passed, 3 total
+Snapshots:   0 total
+Time:        4.261 s
+Ran all test suites matching /ex3-hijackLogo.test.js/i.
+
+2021-11-02 03:42:23 error: *** ESLint Report ***
+
+ex3-hijackLogo.js
+  12:7  warning  'googleLogo' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+
+✖ 1 problem (0 errors, 1 warning)
+
+
+2021-11-02 03:42:25 error: *** Spell Checker Report ***
+
+ex3-hijackLogo.js:12:47 - Unknown word (Xdpd)
+
+2021-11-02 03:43:16 info: Disclaimer turned off
+2021-11-02 03:43:23 info: ------------------------------------------
+2021-11-02 03:43:23 info: >>> Running Unit Test `ex3-hijackLogo` <<<
+2021-11-02 03:43:23 info: ------------------------------------------
+2021-11-02 03:43:26 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex3-hijackLogo.test.js --colors
+ FAIL  2-Browsers/Week1/unit-tests/ex3-hijackLogo.test.js
+  hijackLogo
+    ✕ should have all TODO comments removed (12 ms)
+    ✓ should set the `src` property
+    ✓ should set the `srcset` property (1 ms)
+
+  ● hijackLogo › should have all TODO comments removed
+
+    expect(received).toBeFalsy()
+
+    Received: true
+
+      113 |
+      114 | function checkTodos(source) {
+    > 115 |   expect(source.includes('TODO')).toBeFalsy();
+          |                                   ^
+      116 | }
+      117 |
+      118 | module.exports = {
+
+      at checkTodos (test-runner/unit-test-helpers.js:115:35)
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex3-hijackLogo.test.js:28:55)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 2 passed, 3 total
+Snapshots:   0 total
+Time:        2.143 s, estimated 3 s
+Ran all test suites matching /ex3-hijackLogo.test.js/i.
+
+2021-11-02 03:43:27 error: *** ESLint Report ***
+
+ex3-hijackLogo.js
+  12:7  warning  'googleLogo' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+
+✖ 1 problem (0 errors, 1 warning)
+
+
+2021-11-02 03:43:29 error: *** Spell Checker Report ***
+
+ex3-hijackLogo.js:12:50 - Unknown word (Xdpd)
+
+2021-11-02 03:44:51 info: --------------------------------------------
+2021-11-02 03:44:51 info: >>> Running Unit Test `ex4-whatsTheTime` <<<
+2021-11-02 03:44:51 info: --------------------------------------------
+2021-11-02 03:45:04 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex4-whatsTheTime.test.js --colors
+ FAIL  2-Browsers/Week1/unit-tests/ex4-whatsTheTime.test.js (9.706 s)
+  whatsTheTime
+    ✓ HTML should be syntactically valid (121 ms)
+    ✕ should have all TODO comments removed (22 ms)
+    ✓ should use `setInterval()` (1 ms)
+    ✓ should not call `setInterval()` more than once (2006 ms)
+    ✓ should use `window.onload` or `window.addEventListener()` for the `load` or `DOMContentLoaded` event (1 ms)
+    ✓ `window.onload` or `window.addEventListener` should not call its event handler function (1 ms)
+
+  ● whatsTheTime › should have all TODO comments removed
+
+    expect(received).toBeFalsy()
+
+    Received: true
+
+      113 |
+      114 | function checkTodos(source) {
+    > 115 |   expect(source.includes('TODO')).toBeFalsy();
+          |                                   ^
+      116 | }
+      117 |
+      118 | module.exports = {
+
+      at checkTodos (test-runner/unit-test-helpers.js:115:35)
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex4-whatsTheTime.test.js:44:55)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 5 passed, 6 total
+Snapshots:   0 total
+Time:        11.377 s
+Ran all test suites matching /ex4-whatsTheTime.test.js/i.
+
+2021-11-02 03:45:05 error: *** ESLint Report ***
+
+ex4-whatsTheTime/index.js
+  12:7  warning  'currTime' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+  13:7  warning  'today' is never reassigned. Use 'const' instead     no-autofix/prefer-const
+  14:7  warning  'time' is never reassigned. Use 'const' instead      no-autofix/prefer-const
+
+✖ 3 problems (0 errors, 3 warnings)
+
+
+2021-11-02 03:46:46 info: --------------------------------------------
+2021-11-02 03:46:46 info: >>> Running Unit Test `ex4-whatsTheTime` <<<
+2021-11-02 03:46:46 info: --------------------------------------------
+2021-11-02 03:46:56 info: All unit tests passed.
+2021-11-02 03:46:58 error: *** ESLint Report ***
+
+ex4-whatsTheTime/index.js
+  11:7  warning  'currTime' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+  12:7  warning  'today' is never reassigned. Use 'const' instead     no-autofix/prefer-const
+  13:7  warning  'time' is never reassigned. Use 'const' instead      no-autofix/prefer-const
+
+✖ 3 problems (0 errors, 3 warnings)
+
+
+2021-11-02 03:47:16 info: --------------------------------------------
+2021-11-02 03:47:16 info: >>> Running Unit Test `ex4-whatsTheTime` <<<
+2021-11-02 03:47:16 info: --------------------------------------------
+2021-11-02 03:47:26 info: All unit tests passed.
+2021-11-02 03:47:30 info: All steps were completed successfully
+2021-11-02 03:47:56 info: ---------------------------------------
+2021-11-02 03:47:56 info: >>> Running Unit Test `ex5-catWalk` <<<
+2021-11-02 03:47:56 info: ---------------------------------------
+2021-11-02 03:48:04 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex5-catWalk.test.js --colors
+ FAIL  2-Browsers/Week1/unit-tests/ex5-catWalk.test.js
+  catWalk
+    ✓ HTML should be syntactically valid (115 ms)
+    ✕ should have all TODO comments removed (8 ms)
+    ✓ should use `setInterval()` and/or `setTimeout()`
+    ✕ should use `window.onload` or `window.addEventListener()` for the `load` or `DOMContentLoaded` event (1 ms)
+    ✓ `window.onload` or `window.addEventListener` should not call its event handler function
+
+  ● catWalk › should have all TODO comments removed
+
+    expect(received).toBeFalsy()
+
+    Received: true
+
+      113 |
+      114 | function checkTodos(source) {
+    > 115 |   expect(source.includes('TODO')).toBeFalsy();
+          |                                   ^
+      116 | }
+      117 |
+      118 | module.exports = {
+
+      at checkTodos (test-runner/unit-test-helpers.js:115:35)
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex5-catWalk.test.js:40:55)
+
+  ● catWalk › should use `window.onload` or `window.addEventListener()` for the `load` or `DOMContentLoaded` event
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      45 |
+      46 |   test('should use `window.onload` or `window.addEventListener()` for the `load` or `DOMContentLoaded` event', () => {
+    > 47 |     expect(state.onload).toBeDefined();
+         |                          ^
+      48 |   });
+      49 |
+      50 |   test('`window.onload` or `window.addEventListener` should not call its event handler function', () => {
+
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex5-catWalk.test.js:47:26)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 3 passed, 5 total
+Snapshots:   0 total
+Time:        6.036 s
+Ran all test suites matching /ex5-catWalk.test.js/i.
+
+2021-11-02 03:48:06 error: *** ESLint Report ***
+
+ex5-catWalk/index.js
+  34:7  warning  'newLeft' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+
+✖ 1 problem (0 errors, 1 warning)
+
+
+2021-11-02 03:48:08 error: *** Spell Checker Report ***
+
+ex5-catWalk/index.js:30:5 - Unknown word (countinue)
+ex5-catWalk/index.js:38:5 - Unknown word (countinue)
+ex5-catWalk/index.js:47:5 - Unknown word (countinue)
+ex5-catWalk/index.js:52:5 - Unknown word (countinue)
+
+2021-11-02 03:51:57 info: ---------------------------------------
+2021-11-02 03:51:57 info: >>> Running Unit Test `ex5-catWalk` <<<
+2021-11-02 03:51:57 info: ---------------------------------------
+2021-11-02 03:52:05 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex5-catWalk.test.js --colors
+ FAIL  2-Browsers/Week1/unit-tests/ex5-catWalk.test.js
+  catWalk
+    ✓ HTML should be syntactically valid (121 ms)
+    ✓ should have all TODO comments removed (1 ms)
+    ✓ should use `setInterval()` and/or `setTimeout()`
+    ✕ should use `window.onload` or `window.addEventListener()` for the `load` or `DOMContentLoaded` event (2 ms)
+    ✓ `window.onload` or `window.addEventListener` should not call its event handler function (1 ms)
+
+  ● catWalk › should use `window.onload` or `window.addEventListener()` for the `load` or `DOMContentLoaded` event
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      45 |
+      46 |   test('should use `window.onload` or `window.addEventListener()` for the `load` or `DOMContentLoaded` event', () => {
+    > 47 |     expect(state.onload).toBeDefined();
+         |                          ^
+      48 |   });
+      49 |
+      50 |   test('`window.onload` or `window.addEventListener` should not call its event handler function', () => {
+
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex5-catWalk.test.js:47:26)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 4 passed, 5 total
+Snapshots:   0 total
+Time:        5.687 s
+Ran all test suites matching /ex5-catWalk.test.js/i.
+
+2021-11-02 03:52:06 error: *** ESLint Report ***
+
+ex5-catWalk/index.js
+  33:7  warning  'newLeft' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+
+✖ 1 problem (0 errors, 1 warning)
+
+
+2021-11-02 03:52:09 error: *** Spell Checker Report ***
+
+ex5-catWalk/index.js:30:5 - Unknown word (countinue)
+ex5-catWalk/index.js:37:5 - Unknown word (countinue)
+ex5-catWalk/index.js:46:5 - Unknown word (countinue)
+ex5-catWalk/index.js:51:5 - Unknown word (countinue)
+
+2021-11-02 03:52:43 info: ---------------------------------------
+2021-11-02 03:52:43 info: >>> Running Unit Test `ex5-catWalk` <<<
+2021-11-02 03:52:43 info: ---------------------------------------
+2021-11-02 03:52:50 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex5-catWalk.test.js --colors
+ FAIL  2-Browsers/Week1/unit-tests/ex5-catWalk.test.js
+  catWalk
+    ✓ HTML should be syntactically valid (117 ms)
+    ✓ should have all TODO comments removed (1 ms)
+    ✓ should use `setInterval()` and/or `setTimeout()`
+    ✓ should use `window.onload` or `window.addEventListener()` for the `load` or `DOMContentLoaded` event
+    ✕ `window.onload` or `window.addEventListener` should not call its event handler function (2 ms)
+
+  ● catWalk › `window.onload` or `window.addEventListener` should not call its event handler function
+
+    expect(received).not.toBeDefined()
+
+    Received: true
+
+      49 |
+      50 |   test('`window.onload` or `window.addEventListener` should not call its event handler function', () => {
+    > 51 |     expect(state.callError).not.toBeDefined();
+         |                                 ^
+      52 |   });
+      53 | });
+      54 |
+
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex5-catWalk.test.js:51:33)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 4 passed, 5 total
+Snapshots:   0 total
+Time:        5.575 s
+Ran all test suites matching /ex5-catWalk.test.js/i.
+
+2021-11-02 03:52:52 error: *** ESLint Report ***
+
+ex5-catWalk/index.js
+  33:7  warning  'newLeft' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+
+✖ 1 problem (0 errors, 1 warning)
+
+
+2021-11-02 03:52:54 error: *** Spell Checker Report ***
+
+ex5-catWalk/index.js:30:5 - Unknown word (countinue)
+ex5-catWalk/index.js:37:5 - Unknown word (countinue)
+ex5-catWalk/index.js:46:5 - Unknown word (countinue)
+ex5-catWalk/index.js:51:5 - Unknown word (countinue)
+
+2021-11-02 03:54:03 info: ---------------------------------------
+2021-11-02 03:54:03 info: >>> Running Unit Test `ex5-catWalk` <<<
+2021-11-02 03:54:03 info: ---------------------------------------
+2021-11-02 03:54:11 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex5-catWalk.test.js --colors
+ FAIL  2-Browsers/Week1/unit-tests/ex5-catWalk.test.js
+  catWalk
+    ✓ HTML should be syntactically valid (118 ms)
+    ✓ should have all TODO comments removed (1 ms)
+    ✓ should use `setInterval()` and/or `setTimeout()`
+    ✕ should use `window.onload` or `window.addEventListener()` for the `load` or `DOMContentLoaded` event (2 ms)
+    ✓ `window.onload` or `window.addEventListener` should not call its event handler function
+
+  ● catWalk › should use `window.onload` or `window.addEventListener()` for the `load` or `DOMContentLoaded` event
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      45 |
+      46 |   test('should use `window.onload` or `window.addEventListener()` for the `load` or `DOMContentLoaded` event', () => {
+    > 47 |     expect(state.onload).toBeDefined();
+         |                          ^
+      48 |   });
+      49 |
+      50 |   test('`window.onload` or `window.addEventListener` should not call its event handler function', () => {
+
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex5-catWalk.test.js:47:26)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 4 passed, 5 total
+Snapshots:   0 total
+Time:        5.953 s
+Ran all test suites matching /ex5-catWalk.test.js/i.
+
+2021-11-02 03:54:13 error: *** ESLint Report ***
+
+ex5-catWalk/index.js
+  33:7  warning  'newLeft' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+  56:1  warning  Remove commented-out code                           hyf/no-commented-out-code
+
+✖ 2 problems (0 errors, 2 warnings)
+
+
+2021-11-02 03:54:15 error: *** Spell Checker Report ***
+
+ex5-catWalk/index.js:30:5 - Unknown word (countinue)
+ex5-catWalk/index.js:37:5 - Unknown word (countinue)
+ex5-catWalk/index.js:46:5 - Unknown word (countinue)
+ex5-catWalk/index.js:51:5 - Unknown word (countinue)
+
+2021-11-02 03:54:49 info: ---------------------------------------
+2021-11-02 03:54:49 info: >>> Running Unit Test `ex5-catWalk` <<<
+2021-11-02 03:54:49 info: ---------------------------------------
+2021-11-02 03:54:57 info: All unit tests passed.
+2021-11-02 03:54:59 error: *** ESLint Report ***
+
+ex5-catWalk/index.js
+  33:7  warning  'newLeft' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+  56:1  warning  Remove commented-out code                           hyf/no-commented-out-code
+
+✖ 2 problems (0 errors, 2 warnings)
+
+
+2021-11-02 03:55:01 error: *** Spell Checker Report ***
+
+ex5-catWalk/index.js:30:5 - Unknown word (countinue)
+ex5-catWalk/index.js:37:5 - Unknown word (countinue)
+ex5-catWalk/index.js:46:5 - Unknown word (countinue)
+ex5-catWalk/index.js:51:5 - Unknown word (countinue)
+
+2021-11-02 03:57:23 info: ---------------------------------------
+2021-11-02 03:57:23 info: >>> Running Unit Test `ex5-catWalk` <<<
+2021-11-02 03:57:23 info: ---------------------------------------
+2021-11-02 03:57:31 info: All unit tests passed.
+2021-11-02 03:57:32 error: *** ESLint Report ***
+
+ex5-catWalk/index.js
+  56:1  warning  Remove commented-out code  hyf/no-commented-out-code
+
+✖ 1 problem (0 errors, 1 warning)
+
+
+2021-11-02 03:57:44 info: ---------------------------------------
+2021-11-02 03:57:44 info: >>> Running Unit Test `ex5-catWalk` <<<
+2021-11-02 03:57:44 info: ---------------------------------------
+2021-11-02 03:57:53 info: All unit tests passed.
+2021-11-02 03:57:56 info: All steps were completed successfully
+2021-11-02 03:58:55 info: ------------------------------------------
+2021-11-02 03:58:55 info: >>> Running Unit Test `ex6-gameOfLife` <<<
+2021-11-02 03:58:55 info: ------------------------------------------
+2021-11-02 03:58:59 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex6-gameOfLife.test.js --colors
+ FAIL  2-Browsers/Week1/unit-tests/ex6-gameOfLife.test.js
+  Game Of Life:
+    ✓ should exist and be executable (3 ms)
+    ✓ a living cell with zero living neighbors should die and have its life time reset to zero (3 ms)
+    ✓ a living cell with one living neighbor should die and have its life time reset to zero (1 ms)
+    ✓ a living cell with two living neighbors should survive and have its life time incremented by one (1 ms)
+    ✕ a living cell with three living neighbors should survive and have its life time incremented by one (4 ms)
+    ✓ a living cell with four living neighbors should die and have its life time reset to zero
+    ✓ a dead cell with zero living neighbors should remain dead and have a life time of zero (1 ms)
+    ✓ a dead cell with one living neighbor should remain dead and have a life time of zero (1 ms)
+    ✕ a dead cell with two living neighbors should remain dead and have a life time of zero (1 ms)
+    ✓ a dead cell with three living neighbors should come alive and have its lifeTime reset to one
+    ✓ a dead cell with four living neighbors should remain dead and have a life time of zero (1 ms)
+
+  ● Game Of Life: › a living cell with three living neighbors should survive and have its life time incremented by one
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 2
+    Received: 1
+
+      115 |
+      116 |     expect(midCell.alive).toBe(true);
+    > 117 |     expect(midCell.lifeTime).toBe(2);
+          |                              ^
+      118 |   });
+      119 |
+      120 |   test('a living cell with four living neighbors should die and have its life time reset to zero', () => {
+
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex6-gameOfLife.test.js:117:30)
+
+  ● Game Of Life: › a dead cell with two living neighbors should remain dead and have a life time of zero
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+      202 |
+      203 |     expect(midCell.alive).toBe(false);
+    > 204 |     expect(midCell.lifeTime).toBe(0);
+          |                              ^
+      205 |   });
+      206 |
+      207 |   test('a dead cell with three living neighbors should come alive and have its lifeTime reset to one', () => {
+
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex6-gameOfLife.test.js:204:30)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 9 passed, 11 total
+Snapshots:   0 total
+Time:        2.249 s
+Ran all test suites matching /ex6-gameOfLife.test.js/i.
+
+2021-11-02 03:59:02 error: *** ESLint Report ***
+
+ex6-gameOfLife/index.js
+  22:3  warning  Remove commented-out code  hyf/no-commented-out-code
+
+✖ 1 problem (0 errors, 1 warning)
+
+
+2021-11-02 03:59:59 info: ----------------------------------------
+2021-11-02 03:59:59 info: >>> Running Unit Test `ex1-bookList` <<<
+2021-11-02 03:59:59 info: ----------------------------------------
+2021-11-02 04:00:07 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-bookList.test.js --colors
+ FAIL  2-Browsers/Week1/unit-tests/ex1-bookList.test.js
+  Generated HTML
+    ✕ HTML should be syntactically valid (137 ms)
+    ✓ should contain a <ul> that is a child of <div id="bookList"> (4 ms)
+    ✓ should contain a <ul> with 3 <li> elements (2 ms)
+    ✓ should contain an <li> with title and author for each book of the `myBooks` array (3 ms)
+    ✓ should contain an <img> element for each book (1 ms)
+
+  ● Generated HTML › HTML should be syntactically valid
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: ""
+    Received: "
+    inline
+      25:145  error  <img> is missing required \"alt\" attribute  wcag/h37
+      25:297  error  <img> is missing required \"alt\" attribute  wcag/h37
+      25:440  error  <img> is missing required \"alt\" attribute  wcag/h37·
+    ✖ 3 problems (3 errors, 0 warnings)·
+    More information:
+      https://html-validate.org/rules/wcag/h37.html·
+    "
+
+      44 |   const report = htmlValidate.validateString(htmlText);
+      45 |   const validationReport = stylish(report);
+    > 46 |   expect(validationReport).toBe('');
+         |                            ^
+      47 | }
+      48 |
+      49 | module.exports = {
+
+      at validateHTML (test-runner/jsdom-helpers.js:46:28)
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex1-bookList.test.js:39:5)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 4 passed, 5 total
+Snapshots:   0 total
+Time:        5.861 s
+Ran all test suites matching /ex1-bookList.test.js/i.
+
+2021-11-02 04:00:09 error: *** ESLint Report ***
+
+ex1-bookList/index.js
+  47:5  warning  'unOrderList' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+  53:9  warning  'itemList' is never reassigned. Use 'const' instead     no-autofix/prefer-const
+  55:9  warning  'paragraph' is never reassigned. Use 'const' instead    no-autofix/prefer-const
+  56:9  warning  'bookImg' is never reassigned. Use 'const' instead      no-autofix/prefer-const
+  75:5  warning  'ulElement' is never reassigned. Use 'const' instead    no-autofix/prefer-const
+
+✖ 5 problems (0 errors, 5 warnings)
+
+
+2021-11-02 04:00:10 error: *** Spell Checker Report ***
+
+ex1-bookList/index.js:48:28 - Unknown word (unorder)
+
+2021-11-02 04:03:16 info: ----------------------------------------
+2021-11-02 04:03:16 info: >>> Running Unit Test `ex1-bookList` <<<
+2021-11-02 04:03:16 info: ----------------------------------------
+2021-11-02 04:03:24 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-bookList.test.js --colors
+ FAIL  2-Browsers/Week1/unit-tests/ex1-bookList.test.js
+  Generated HTML
+    ✕ HTML should be syntactically valid (135 ms)
+    ✓ should contain a <ul> that is a child of <div id="bookList"> (2 ms)
+    ✓ should contain a <ul> with 3 <li> elements (2 ms)
+    ✓ should contain an <li> with title and author for each book of the `myBooks` array (2 ms)
+    ✓ should contain an <img> element for each book
+
+  ● Generated HTML › HTML should be syntactically valid
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: ""
+    Received: "
+    inline
+      25:147  error  <img> is missing required \"alt\" attribute  wcag/h37
+      25:299  error  <img> is missing required \"alt\" attribute  wcag/h37
+      25:442  error  <img> is missing required \"alt\" attribute  wcag/h37·
+    ✖ 3 problems (3 errors, 0 warnings)·
+    More information:
+      https://html-validate.org/rules/wcag/h37.html·
+    "
+
+      44 |   const report = htmlValidate.validateString(htmlText);
+      45 |   const validationReport = stylish(report);
+    > 46 |   expect(validationReport).toBe('');
+         |                            ^
+      47 | }
+      48 |
+      49 | module.exports = {
+
+      at validateHTML (test-runner/jsdom-helpers.js:46:28)
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex1-bookList.test.js:39:5)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 4 passed, 5 total
+Snapshots:   0 total
+Time:        6.16 s
+Ran all test suites matching /ex1-bookList.test.js/i.
+
+2021-11-02 04:03:26 error: *** ESLint Report ***
+
+ex1-bookList/index.js
+  47:5  warning  'unOrderList' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+  53:9  warning  'itemList' is never reassigned. Use 'const' instead     no-autofix/prefer-const
+  55:9  warning  'paragraph' is never reassigned. Use 'const' instead    no-autofix/prefer-const
+  56:9  warning  'bookImg' is never reassigned. Use 'const' instead      no-autofix/prefer-const
+  75:5  warning  'ulElement' is never reassigned. Use 'const' instead    no-autofix/prefer-const
+
+✖ 5 problems (0 errors, 5 warnings)
+
+
+2021-11-02 04:04:55 info: ----------------------------------------
+2021-11-02 04:04:55 info: >>> Running Unit Test `ex1-bookList` <<<
+2021-11-02 04:04:55 info: ----------------------------------------
+2021-11-02 04:05:04 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-bookList.test.js --colors
+ FAIL  2-Browsers/Week1/unit-tests/ex1-bookList.test.js
+  Generated HTML
+    ✕ HTML should be syntactically valid (125 ms)
+    ✓ should contain a <ul> that is a child of <div id="bookList"> (4 ms)
+    ✓ should contain a <ul> with 3 <li> elements (2 ms)
+    ✓ should contain an <li> with title and author for each book of the `myBooks` array (3 ms)
+    ✓ should contain an <img> element for each book (1 ms)
+
+  ● Generated HTML › HTML should be syntactically valid
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: ""
+    Received: "
+    inline
+      25:147  error  <img> is missing required \"alt\" attribute  wcag/h37
+      25:299  error  <img> is missing required \"alt\" attribute  wcag/h37
+      25:442  error  <img> is missing required \"alt\" attribute  wcag/h37·
+    ✖ 3 problems (3 errors, 0 warnings)·
+    More information:
+      https://html-validate.org/rules/wcag/h37.html·
+    "
+
+      44 |   const report = htmlValidate.validateString(htmlText);
+      45 |   const validationReport = stylish(report);
+    > 46 |   expect(validationReport).toBe('');
+         |                            ^
+      47 | }
+      48 |
+      49 | module.exports = {
+
+      at validateHTML (test-runner/jsdom-helpers.js:46:28)
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex1-bookList.test.js:39:5)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 4 passed, 5 total
+Snapshots:   0 total
+Time:        5.95 s
+Ran all test suites matching /ex1-bookList.test.js/i.
+
+2021-11-02 04:05:56 info: ----------------------------------------
+2021-11-02 04:05:56 info: >>> Running Unit Test `ex1-bookList` <<<
+2021-11-02 04:05:56 info: ----------------------------------------
+2021-11-02 04:06:04 info: All unit tests passed.
+2021-11-02 04:06:08 info: All steps were completed successfully
+2021-11-02 04:09:35 info: ---------------------------------------
+2021-11-02 04:09:35 info: >>> Running Unit Test `ex2-aboutMe` <<<
+2021-11-02 04:09:35 info: ---------------------------------------
+2021-11-02 04:09:44 info: All unit tests passed.
+2021-11-02 04:09:47 error: *** Spell Checker Report ***
+
+ex2-aboutMe/index.js:17:25 - Unknown word (Roumieh)
+ex2-aboutMe/index.js:23:7 - Unknown word (unorder)
+ex2-aboutMe/index.js:25:20 - Unknown word (unorder)
+
+2021-11-02 04:10:02 info: ------------------------------------------
+2021-11-02 04:10:02 info: >>> Running Unit Test `ex3-hijackLogo` <<<
+2021-11-02 04:10:02 info: ------------------------------------------
+2021-11-02 04:10:05 info: All unit tests passed.
+2021-11-02 04:10:07 error: *** ESLint Report ***
+
+ex3-hijackLogo.js
+  11:7  warning  'googleLogo' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+
+✖ 1 problem (0 errors, 1 warning)
+
+
+2021-11-02 04:10:08 error: *** Spell Checker Report ***
+
+ex3-hijackLogo.js:11:50 - Unknown word (Xdpd)
+
+2021-11-02 04:10:37 info: --------------------------------------------
+2021-11-02 04:10:37 info: >>> Running Unit Test `ex4-whatsTheTime` <<<
+2021-11-02 04:10:37 info: --------------------------------------------
+2021-11-02 04:10:47 info: All unit tests passed.
+2021-11-02 04:10:50 info: All steps were completed successfully
+2021-11-02 04:10:58 info: ---------------------------------------
+2021-11-02 04:10:58 info: >>> Running Unit Test `ex5-catWalk` <<<
+2021-11-02 04:10:58 info: ---------------------------------------
+2021-11-02 04:11:04 info: All unit tests passed.
+2021-11-02 04:11:07 info: All steps were completed successfully
+2021-11-02 04:11:14 info: ------------------------------------------
+2021-11-02 04:11:14 info: >>> Running Unit Test `ex6-gameOfLife` <<<
+2021-11-02 04:11:14 info: ------------------------------------------
+2021-11-02 04:11:18 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex6-gameOfLife.test.js --colors
+ FAIL  2-Browsers/Week1/unit-tests/ex6-gameOfLife.test.js
+  Game Of Life:
+    ✓ should exist and be executable (3 ms)
+    ✓ a living cell with zero living neighbors should die and have its life time reset to zero (3 ms)
+    ✓ a living cell with one living neighbor should die and have its life time reset to zero (1 ms)
+    ✓ a living cell with two living neighbors should survive and have its life time incremented by one
+    ✕ a living cell with three living neighbors should survive and have its life time incremented by one (3 ms)
+    ✓ a living cell with four living neighbors should die and have its life time reset to zero (3 ms)
+    ✓ a dead cell with zero living neighbors should remain dead and have a life time of zero
+    ✓ a dead cell with one living neighbor should remain dead and have a life time of zero
+    ✕ a dead cell with two living neighbors should remain dead and have a life time of zero (1 ms)
+    ✓ a dead cell with three living neighbors should come alive and have its lifeTime reset to one (1 ms)
+    ✓ a dead cell with four living neighbors should remain dead and have a life time of zero
+
+  ● Game Of Life: › a living cell with three living neighbors should survive and have its life time incremented by one
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 2
+    Received: 1
+
+      115 |
+      116 |     expect(midCell.alive).toBe(true);
+    > 117 |     expect(midCell.lifeTime).toBe(2);
+          |                              ^
+      118 |   });
+      119 |
+      120 |   test('a living cell with four living neighbors should die and have its life time reset to zero', () => {
+
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex6-gameOfLife.test.js:117:30)
+
+  ● Game Of Life: › a dead cell with two living neighbors should remain dead and have a life time of zero
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+      202 |
+      203 |     expect(midCell.alive).toBe(false);
+    > 204 |     expect(midCell.lifeTime).toBe(0);
+          |                              ^
+      205 |   });
+      206 |
+      207 |   test('a dead cell with three living neighbors should come alive and have its lifeTime reset to one', () => {
+
+      at Object.<anonymous> (2-Browsers/Week1/unit-tests/ex6-gameOfLife.test.js:204:30)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 9 passed, 11 total
+Snapshots:   0 total
+Time:        2.07 s
+Ran all test suites matching /ex6-gameOfLife.test.js/i.
+
+2021-11-02 04:11:19 error: *** ESLint Report ***
+
+ex6-gameOfLife/index.js
+  22:3  warning  Remove commented-out code  hyf/no-commented-out-code
+
+✖ 1 problem (0 errors, 1 warning)
+
+

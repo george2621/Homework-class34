@@ -27,15 +27,14 @@ const catImg = document.querySelector('img');
 const home = document.querySelector('div');
 catImg.style.left = '0px';
 let count;
-let countinue = 1;
+let continueWalk = 1;
 function catWalk() {
-  // TODO complete this function
   catImg.style.left = parseFloat(catImg.style.left) + 10 + 'px';
-  let newLeft = parseFloat(catImg.style.left);
+  const newLeft = parseFloat(catImg.style.left);
 
   if (
     newLeft >= (home.clientWidth - catImg.clientWidth) / 2 &&
-    countinue % 2 !== 0
+    continueWalk % 2 !== 0
   ) {
     catImg.src =
       'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
@@ -44,17 +43,16 @@ function catWalk() {
       catImg.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
       continueCounting();
     }, 5000);
-    countinue += 1;
+    continueWalk += 1;
   }
 
   if (newLeft > home.clientWidth - catImg.clientWidth) {
     catImg.style.left = '0px';
-    countinue += 1;
+    continueWalk += 1;
   }
 }
 
-doCount();
-// TODO execute `catWalk` when the browser has completed loading the page
+window.onload = doCount;
 
 function doCount() {
   count = setInterval(catWalk, 50);

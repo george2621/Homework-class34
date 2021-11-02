@@ -44,16 +44,15 @@ const coverImg = [
   'the_pragmatic_programmer.jpg',
 ];
 
-let unOrderList = document.createElement('ul');
-unOrderList.classList.add('unorder-list');
+const unOrderList = document.createElement('ul');
+unOrderList.classList.add('unordered-list');
 
 function createBookList(books) {
-  // TODO your code goes in here, return the ul element
   for (let i = 0; i < books.length; i++) {
-    let itemList = document.createElement('li');
+    const itemList = document.createElement('li');
     itemList.classList.add('item-list');
-    let paragraph = document.createElement('p');
-    let bookImg = document.createElement('img');
+    const paragraph = document.createElement('p');
+    const bookImg = document.createElement('img');
 
     if (books[i].alreadyRead === true) {
       itemList.style.background = 'green';
@@ -63,6 +62,7 @@ function createBookList(books) {
 
     paragraph.textContent = `${books[i].title}  ${books[i].author}`;
     bookImg.src = `./assets/${coverImg[i]}`;
+    bookImg.alt = 'Book cover';
 
     itemList.appendChild(paragraph);
     itemList.appendChild(bookImg);
@@ -72,6 +72,6 @@ function createBookList(books) {
   return unOrderList;
 }
 
-let ulElement = createBookList(myBooks);
+const ulElement = createBookList(myBooks);
 
 document.querySelector('#bookList').appendChild(ulElement);
