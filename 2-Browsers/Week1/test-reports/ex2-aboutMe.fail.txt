@@ -1,0 +1,6 @@
+
+*** Spell Checker Report ***
+
+ex2-aboutMe/index.js:16:25 - Unknown word (Roumieh)
+ex2-aboutMe/index.js:22:7 - Unknown word (unorder)
+ex2-aboutMe/index.js:24:20 - Unknown word (unorder)

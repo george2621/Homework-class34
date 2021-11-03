@@ -1,4 +1,5 @@
 'use strict';
+
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Homework/tree/main/2-Browsers/Week1#exercise-5-the-cat-walk
 
@@ -21,8 +22,46 @@ Full description at: https://github.com/HackYourFuture/Homework/tree/main/2-Brow
 
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
+
+const catImg = document.querySelector('img');
+const home = document.querySelector('div');
+catImg.style.left = '0px';
+let count;
+let continueWalk = 1;
 function catWalk() {
-  // TODO complete this function
+  catImg.style.left = parseFloat(catImg.style.left) + 10 + 'px';
+  const newLeft = parseFloat(catImg.style.left);
+
+  if (
+    newLeft >= (home.clientWidth - catImg.clientWidth) / 2 &&
+    continueWalk % 2 !== 0
+  ) {
+    catImg.src =
+      'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
+    pause();
+    setTimeout(function () {
+      catImg.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+      continueCounting();
+    }, 5000);
+    continueWalk += 1;
+  }
+
+  if (newLeft > home.clientWidth - catImg.clientWidth) {
+    catImg.style.left = '0px';
+    continueWalk += 1;
+  }
 }
 
-// TODO execute `catWalk` when the browser has completed loading the page
+window.onload = doCount;
+
+function doCount() {
+  count = setInterval(catWalk, 50);
+}
+
+function continueCounting() {
+  doCount();
+}
+
+function pause() {
+  clearInterval(count);
+}

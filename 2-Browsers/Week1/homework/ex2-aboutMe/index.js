@@ -10,4 +10,17 @@ Full description at: https://github.com/HackYourFuture/Homework/tree/main/2-Brow
    `list-item`.
 ------------------------------------------------------------------------------*/
 
-// TODO add your JavaScript code here.
+document.body.style.fontFamily = 'Arial, sans-serif';
+
+const nickName = document.getElementById('nickname');
+nickName.textContent = 'Roumieh';
+const favFood = document.getElementById('fav-food');
+favFood.textContent = 'BBQ';
+const homeTown = document.getElementById('hometown');
+homeTown.textContent = 'Homs';
+
+const unorderList = document.querySelector('ul');
+
+for (const item of unorderList.children) {
+  item.classList.add('list-item');
+}
