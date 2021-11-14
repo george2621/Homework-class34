@@ -62,7 +62,7 @@ function createBookList(books) {
 
     paragraph.textContent = `${books[i].title}  ${books[i].author}`;
     bookImg.src = `./assets/${coverImg[i]}`;
-    bookImg.alt = 'Book cover';
+    bookImg.alt = `${books[i].title}`;
 
     itemList.appendChild(paragraph);
     itemList.appendChild(bookImg);

@@ -11,7 +11,9 @@ function addCurrentTime() {
   const currTime = document.querySelector('.current-time');
   const today = new Date();
   const time =
-    today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+    today.getHours() + ':' 
+    + (today.getMinutes()>10 ? today.getMinutes() : "0"+today.getMinutes()) + ':' 
+    + (today.getSeconds()>10?today.getSeconds(): "0" +today.getSeconds());
   console.log(time);
   currTime.textContent = time;
   return time;
