@@ -1,0 +1,64 @@
+*** Unit Test Error Report ***
+
+Command failed: npx jest ex3-rollDice.test.js --colors
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex3-rollDice.test.js
+  rollDice
+    ✓ should exist and be executable (3 ms)
+    ✓ should have all TODO comments removed (1 ms)
+    ✓ should call `new Promise()`
+    ✓ `resolve()` should be called with a one argument (1 ms)
+    ✓ `reject()` should be called with a one argument (1 ms)
+    ✕ should resolve when the dice settles successfully (2 ms)
+    ✕ should reject with an Error when the dice rolls off the table (12 ms)
+
+  ● rollDice › should resolve when the dice settles successfully
+
+    TypeError: rollDice is not a function
+
+      61 |       .mockImplementation((cb) => cb());
+      62 |
+    > 63 |     const promise = rollDice();
+         |                     ^
+      64 |     expect(promise).toBeInstanceOf(Promise);
+      65 |     const assertionPromise = expect(promise).resolves.toBeDefined();
+      66 |
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex3-rollDice.test.js:63:21)
+
+  ● rollDice › should resolve when the dice settles successfully
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received one assertion call.
+
+      52 |
+      53 |   test('should resolve when the dice settles successfully', () => {
+    > 54 |     expect.assertions(3);
+         |            ^
+      55 |     expect(exported).toBeDefined();
+      56 |
+      57 |     const logSpy = jest.spyOn(console, 'log').mockImplementation();
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex3-rollDice.test.js:54:12)
+
+  ● rollDice › should reject with an Error when the dice rolls off the table
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      75 |
+      76 |   test('should reject with an Error when the dice rolls off the table', async () => {
+    > 77 |     expect.assertions(3);
+         |            ^
+      78 |     expect(exported).toBeDefined();
+      79 |
+      80 |     const logSpy = jest.spyOn(console, 'log').mockImplementation();
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex3-rollDice.test.js:77:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 5 passed, 7 total
+Snapshots:   0 total
+Time:        2.584 s
+Ran all test suites matching /ex3-rollDice.test.js/i.
