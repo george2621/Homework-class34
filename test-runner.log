@@ -1286,3 +1286,13 @@ Snapshots:   0 total
 Time:        2.584 s
 Ran all test suites matching /ex3-rollDice.test.js/i.
 
+2021-11-27 04:06:33 info: ----------------------------------------
+2021-11-27 04:06:33 info: >>> Running Unit Test `ex3-rollDice` <<<
+2021-11-27 04:06:33 info: ----------------------------------------
+2021-11-27 04:06:38 info: All unit tests passed.
+2021-11-27 04:06:42 info: All steps were completed successfully
+2021-11-27 04:08:54 info: ---------------------------------------
+2021-11-27 04:08:54 info: >>> Running Unit Test `ex1-johnWho` <<<
+2021-11-27 04:08:54 info: ---------------------------------------
+2021-11-27 04:08:59 info: All unit tests passed.
+2021-11-27 04:09:02 info: All steps were completed successfully

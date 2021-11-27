@@ -12,8 +12,8 @@ Rewrite this function, but replace the callback syntax with the Promise syntax:
 
 const getAnonName = (firstName) => {
   return new Promise((resolve, reject) => {
-    const fullName = firstName + ' Doe';
     if(firstName){
+      const fullName = firstName + ' Doe';
       resolve(fullName);
     } else {
       reject(new Error('You did not pass a firstName'));
