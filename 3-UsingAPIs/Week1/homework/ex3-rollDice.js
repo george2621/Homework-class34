@@ -25,7 +25,6 @@ function rollDice() {
       // Use callback to notify that the dice rolled off the table after 6 rolls
       if (roll > 6) {
         reject(new Error('Oops... Dice rolled off the table.'));
-        return;
       }
       if (roll === randomRollsToDo) {
         resolve(value);
@@ -46,3 +45,6 @@ rollDice()
 
 // ! Do not change or remove the code below
 module.exports = rollDice;
+
+//when we use callback when the dice rolls off the table the dice continue in rolling and dont't stop and just show the error show that the dice roll out the table and continue
+//when we use promise the same problem appear the dice continue rolling but in this case the resolve didn't call Contrary to the callback where when we used callback the dice continur rolling and settel in the end ;

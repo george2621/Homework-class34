@@ -38,3 +38,6 @@ rollTheDices()
 
 // ! Do not change or remove the code below
 module.exports = rollTheDices;
+
+
+// when we used promisea.all all the promises is called and when one of the promisese is rejected the other promises cotinue but its didn't resolve because one of the promises is rejeted.
