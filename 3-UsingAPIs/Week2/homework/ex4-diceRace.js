@@ -15,17 +15,23 @@ const rollDice = require('../../helpers/pokerDiceRoller');
 
 function rollTheDices() {
   const dices = [1, 2, 3, 4, 5];
-  // TODO complete this function; use Promise.race() and rollDice()
+  const promises = dices.map((dice) => rollDice(dice));
+  return Promise.race(promises);
 }
 
 // Refactor this function to use async/await and try/catch
-function main() {
-  rollTheDices()
-    .then((results) => console.log('Resolved!', results))
-    .catch((error) => console.log('Rejected!', error.message));
+async function main() {
+  try {
+    const results = await rollTheDices();
+    console.log('Resolved!', results);
+  } catch (error) {
+    console.log('Rejected!', error.message);
+  }
 }
 
 main();
 
 // ! Do not change or remove the code below
 module.exports = rollTheDices;
+
+// the firs promise that resolved or reject show us the result and which promise is the first and I think in this case will continue but it doesn't resolve and reject just the firs promise that meet the condition

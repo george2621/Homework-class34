@@ -1,4 +1,5 @@
 'use strict';
+
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Homework/blob/main/3-UsingAPIs/Week2/README.md#exercise-2-gotta-catch-em-all
 
@@ -22,18 +23,68 @@ Use async/await and try/catch to handle promises.
 Try and avoid using global variables. As much as possible, try and use function 
 parameters and return values to pass data back and forth.
 ------------------------------------------------------------------------------*/
-function fetchData(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+function fetchData(url) {
+  return fetch(url)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Network Error');
+      }
+    })
+    .catch((error) => console.log(error));
 }
 
-function fetchAndPopulatePokemons(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+async function fetchAndPopulatePokemons() {
+  try {
+    const url = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
+    const list = document.querySelector('select');
+    const jsonResponse = await fetchData(url);
+    const pokemonName = jsonResponse.results.map((item) => item.name);
+    pokemonName.forEach((element) => {
+      const option = document.createElement('option');
+      option.textContent = element;
+      option.value = element;
+      list.appendChild(option);
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function fetchImage(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+async function fetchImage() {
+  try {
+    const pokemonImg = document.querySelector('img');
+    const list = document.querySelector('select');
+    const pokemonName = list.value;
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+    const jsonResponse = await fetchData(url);
+    pokemonImg.src = jsonResponse.sprites.front_default;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function main() {
-  // TODO complete this function
+  const mainDiv = document.createElement('div');
+  const getPokemonButton = document.createElement('button');
+  getPokemonButton.textContent = 'Get Pokemon!';
+  getPokemonButton.type = '';
+  const selectedList = document.createElement('select');
+
+  document.body.appendChild(mainDiv);
+  mainDiv.appendChild(getPokemonButton);
+  mainDiv.appendChild(selectedList);
+
+  getPokemonButton.addEventListener('click', fetchAndPopulatePokemons);
+
+  if (selectedList) {
+    const pokemonImg = document.createElement('img');
+    pokemonImg.src = ' ';
+    pokemonImg.alt = 'Pokemon Image';
+    document.body.appendChild(pokemonImg);
+    selectedList.addEventListener('change', fetchImage);
+  }
 }
+
+window.addEventListener('load', main);
