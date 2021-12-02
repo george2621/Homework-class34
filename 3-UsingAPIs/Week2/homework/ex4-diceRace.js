@@ -34,4 +34,5 @@ main();
 // ! Do not change or remove the code below
 module.exports = rollTheDices;
 
-// the firs promise that resolved or reject show us the result and which promise is the first and I think in this case will continue but it doesn't resolve and reject just the firs promise that meet the condition
+//The Promise.race() method returns a promise that fulfills or rejects as soon as one of the promises in an iterable fulfills or rejects, with the value or reason from that promise.
+//and all dices continue rolling but it doesn't resolved and rejected .

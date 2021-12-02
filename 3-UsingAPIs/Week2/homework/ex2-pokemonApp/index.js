@@ -24,21 +24,19 @@ Try and avoid using global variables. As much as possible, try and use function
 parameters and return values to pass data back and forth.
 ------------------------------------------------------------------------------*/
 function fetchData(url) {
-  return fetch(url)
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error('Network Error');
-      }
-    })
-    .catch((error) => console.log(error));
+  return fetch(url).then((response) => {
+    if (response.ok) {
+      return response.json();
+    }
+  });
 }
 
 async function fetchAndPopulatePokemons() {
   try {
     const url = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
     const list = document.querySelector('select');
+    const button = document.querySelector('button');
+    button.disabled = true;
     const jsonResponse = await fetchData(url);
     const pokemonName = jsonResponse.results.map((item) => item.name);
     pokemonName.forEach((element) => {
